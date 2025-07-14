@@ -1,0 +1,219 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(hero.jpeg);
+    background-repeat: repeat-x;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#navlist li{
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 70px;
+    list-style-type: none;
+}
+
+#navlist li:first-child{
+    margin-left: 50px;
+    font-size: 30px;
+}
+
+#t2{
+    margin-top: 450px;
+    background-color: #f4f4f4;
+}
+
+#desc{
+    width: 49%;
+    font-weight: 600;
+    padding: 0 60px;
+    font-size: xx-large;
+}
+
+#brand{
+    padding-left: 4%;
+    font-weight: 900;
+    font-size: 200;
+}
+
+#morebutton{
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 16px;
+    font-size: 10px;
+    margin-left: 8%;
+    margin-bottom: 50px;
+}
+
+.imgtitle{
+    font-weight: bold;
+    text-align: left;
+    padding: 10px 50px;
+    font-size: larger;
+}
+
+.imgdesc{
+    font-weight: lighter;
+    text-align: left;
+    padding: 0 50px;
+    font-size: smaller;
+}
+
+#imgreel tr td{
+    text-align: center;
+    display: inline-block;
+    width: 32%;
+}
+
+#imgreel{
+    margin-bottom: 200px;
+}
+
+
+h2{
+    margin-left: 5%;
+    width: 30px;
+    font-size: 40;
+}
+
+#eng tr td, #eng tr th{
+    padding: 5px 50px;
+    text-align: left;
+    font-size: large;
+}
+
+#eng tr td img{
+    width: 125px;
+    padding-bottom: 100px;
+}
+
+#splash{
+    background-color:#252422;
+    color:#f9cdcd;
+}
+
+h1{
+    font-size:70;
+    width: 50%;
+    text-transform: uppercase;
+    line-height: 70px;
+    padding: 50px 0 0 50px;
+}
+
+#splash tr td p{
+    margin-left: 50px;
+    text-transform: uppercase;
+}
+
+#about{
+    background-color: transparent;
+    border: 1px solid #f9cdcd;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 16px;
+    font-size: 10px;
+    margin-left: 8%;
+    margin-bottom: 50px;
+    color:#f9cdcd;
+}
+
+#viewall{
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 16px;
+    font-size: 10px;
+    margin-left: 8%;
+    margin-bottom: 50px;
+    margin-left: 1100px;
+    font-weight: bold;
+}
+
+#feat, #news{
+    margin-left: 5%;
+}
+
+#news tbody tr td img{
+    display: inline-block;
+    height: 230px;
+    margin-bottom: 80px;
+}
+
+#news tbody tr th h3{
+    font-size: 37px;
+    font-weight: 500;
+    text-align: left;
+    width: 500px;
+    margin-right: 200px;
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+
+#news tbody tr th p{
+    margin-top: 15px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.arrow{
+    font-size: xx-large;
+}
+
+footer{
+    background-color: #252422;
+    color: white;
+}
+
+#f1 li{
+    list-style-type: none;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 30;
+    margin-top: 100px;
+    margin-left: 40px;
+}
+
+#f1 li:last-child{
+    width: 500px;
+    margin-left: 500px;
+}
+
+#f2 li{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 15;
+    margin-top: 100px;
+    margin-left: 40px;
+    padding-right: 170px;
+}
+
+#f2 li:first-child{
+    margin-right: 100px;
+}
+
+#in{
+    display: block;
+    font-weight: bold;
+    font-size: 15;
+    margin-top: 100px;
+    margin-left: 40px;
+    padding-right: 170px;
+}
+
+#tr1{
+    color: white;
+    font-size: 30;
+    font-weight: bold;
+}
+
+#tr1 td{
+    padding-left: 60px;
+    padding-top: 100px;
+}
+

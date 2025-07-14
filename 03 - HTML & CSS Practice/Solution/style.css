@@ -1,0 +1,255 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    background-color: rgb(240, 240, 240);
+    /* padding-bottom: 200px; */
+}
+
+#brand{
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding-right: 600px;
+    font-size: large;
+}
+
+.nav{
+    padding-right: 40px;
+    a{
+        text-decoration: none;
+        color: black;
+    }
+}
+
+#navimg{
+    padding-left: 40px;
+}
+
+#heroimg{
+    width: 400px;
+}
+
+#headertable tr td{
+    width: 47%;
+    padding-left: 80px;
+    padding-top: 100px;
+}
+
+#splashtitle{
+    font-size: 65;
+    font-weight: bolder;
+}
+
+#shopbutton{
+    border: 0;
+    background-color: #FF6A31;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    margin-right: 10px;
+    color: white;
+}
+
+#contactbutton{
+    border: 0;
+    background-color: black;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    color: white;
+}
+
+#splashbody{
+    margin-top: 40px;
+}
+
+#servicetitle{
+    text-align: center;
+    margin-top: 160px;
+    font-size: 32;
+}
+
+#servicebody{
+    text-align: center;
+    margin-bottom: 100px;
+    font-size: 16;
+}
+
+.serviceitem{
+    text-align: center;
+    border: 1px solid lightgrey;
+    padding: 30px 20px;
+    width: 300px;
+}
+
+#servicetable{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#servicetable > tbody > tr > td > ul > li{
+    list-style: none;
+    line-height: 25px;
+}
+
+#servicetable > tbody > tr > td > ul > li:nth-child(2){
+    font-weight: lighter;
+    padding: 10px 0px;
+    font-size: larger;
+    color: #fc5d35;
+}
+
+.serviceitem:hover{
+    border-top: 4px solid #FF6A31;
+}
+
+#readmorebutton{
+    border: 0;
+    background-color: black;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    color: white;
+    position: absolute;
+    left: 46%;
+    margin-top: 40px;
+    border-radius: 0;
+    margin-bottom: 80px;
+}
+
+.fruitdesc{
+    width: 750px;
+}
+
+.fruitpic img{
+    max-width: 150px;
+    max-height: 200px;
+}
+
+#fruittable{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fruitpic img{
+    width: 250px;
+    padding-left: 70px;
+}
+
+.fruitdesc p{
+    padding: 30px 0;
+    width: 600px;
+}
+
+#fruittable > tbody > tr:nth-child(2) > td.fruitdesc{
+    padding: 50px 0;
+}
+
+#buybutton{
+    border: 0;
+    background-color: black;
+    color: white;
+    padding: 20px 20px;
+}
+
+.yummy{
+    padding: 100px;
+    background-image: url(./Images/tasty.png);
+}
+
+.yummy h1{
+    text-align: center;
+    color: white;
+    font-size: 100;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+#test h1, #test p, #test h3{
+    text-align: center;
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#test h1{
+    margin-top: 150px;
+    font-size: 32;
+}
+
+#test p{
+    margin-bottom: 50px;
+    font-size: 16; 
+}
+
+#test img{
+    display:block;
+    margin: 0 auto;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-left: 60px;
+    input, textarea{
+        width: 40%;
+        padding: 20px;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid gray;
+    }
+}
+
+#sendbutton{
+    border: 0;
+    padding: 10px 20px;
+    background-color: #fc5d35;
+    text-transform: uppercase;
+    width: 15%;
+    margin-top: 20px;
+}
+
+footer{
+    padding: 10px 20px;
+    background: #000000dd;
+    color: white;
+    gap: 30px;
+    margin-top: 30px;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 20px;
+    }
+
+    ul li{
+        list-style-type: none;
+    }
+    ul li:first-child{
+        font-weight: bolder;
+        font-size: 25;
+        margin-bottom: 5px;
+    }
+    ul li:not(li:first-child){
+        margin-bottom: 5px;
+        font-weight: 500;
+        font-size: 18;
+        color: #777;
+    }
+}
+
+.sub{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    button{
+        background-color: #fc5d35;
+        text-transform: uppercase;
+        padding: 10px 20px;
+        color: white;
+        border: none;
+    }
+}
