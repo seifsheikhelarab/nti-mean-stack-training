@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="animated-text"></h1>
+    <script>
+        var string = 'welcome to js';
+        var textElement = document.body.children[0];
+        var index = 0;
+        var intervalId = setInterval(function() {
+            if (index < string.length) {
+                textElement.innerHTML += string[index];
+                index++;
+            } else {
+                clearInterval(intervalId);
+                close();
+            }
+        }, 1000);
+        
+    </script>
+</body>
+</html>

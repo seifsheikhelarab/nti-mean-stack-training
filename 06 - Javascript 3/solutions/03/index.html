@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            border: 1px solid red;
+            outline: 3px solid red;
+            width: min-content;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var b = '';
+        var i = 0;
+        setInterval(function() {
+            b = `<p>${i}</p>`;
+            i++;
+            document.body.innerHTML += b;
+            document.title = i;
+        },1000)
+    </script>
+</body>
+</html>

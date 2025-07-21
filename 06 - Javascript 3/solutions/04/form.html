@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="form.html" method="get">
+        <input type="text" name="user" placeholder="Enter Username">
+        <input type="password" name="pass" placeholder="Enter Password">
+        <input type="submit" value="Login">
+    </form>
+    <script>
+        if(location.search!==""){
+            var creds = location.search.split("&");
+            var username = creds[0].split("=")[1];
+            var password = creds[1].split("=")[1];
+
+            if(username == "ali" && password == "123"){
+                open("hi.html");
+            }else{
+                open("no.html");
+            }
+        }
+    </script>
+
+</body>
+</html>
