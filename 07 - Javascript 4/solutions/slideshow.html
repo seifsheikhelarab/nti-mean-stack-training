@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Task</title>
+    <style>
+        img{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/1.png" alt="image">
+    <br><br><br><br>
+    <button id="prevbtn">Previous</button>
+    <button id="nxtbtn">Next</button>
+    <button id="sldshw">Slide Show</button>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    var img = document.querySelector('img');
+    var prevbtn = document.querySelector('#prevbtn');
+    var nxtbtn = document.querySelector('#nxtbtn');
+    var sldshw = document.querySelector('#sldshw');
+    var stop = document.querySelector('#stop');
+
+    var i = 1;
+    nxtbtn.addEventListener('click', function() {
+        if(i == 5) {
+            i = 1;
+        }
+        img.src = `img/${++i}.png`;
+    });
+    prevbtn.addEventListener('click', function() {
+        if(i == 1) {
+            i = 5;
+        }
+        img.src = `img/${--i}.png`;
+    });
+    sldshw.addEventListener('click', function() {
+        var s = setInterval(function() {
+            if(i == 5) {
+                i = 1;
+            }
+            img.src = `img/${++i}.png`;
+        }, 1000);
+        stop.addEventListener('click', function() {
+        clearInterval(s);
+    });
+    });
+    
+</script>
+</html>
