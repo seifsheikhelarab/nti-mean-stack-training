@@ -13,9 +13,19 @@
         <option value="5">Bassem</option>
     </select>
     <br><br><br>
+    <div></div>
 
 </body>
 <script>
-    var students = [{ name:"ali", id:""}]
+    var students = [{ name:"ali", id:"1", grade:"100"},
+                    { name:"nora", id:"2", grade:"90"},
+                    { name:"nada", id:"3", grade:"75"},
+                    { name:"heba", id:"4", grade:"50"},
+                    { name:"bassem", id:"5", grade:"40"}]
+
+    document.getElementById("stds").onchange = function(){
+        var student = students[this.value-1];
+        document.querySelector("div").innerHTML = `${student.name} : ${student.id} : ${student.grade}`;
+    }
 </script>
 </html>
