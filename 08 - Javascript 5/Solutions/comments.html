@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            margin: 20px;
+            padding: 10px;
+            background-color: aliceblue;
+            width: 40%;
+            margin: 1% auto;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+        }
+        button{
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+            cursor: pointer;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button id="next">Next</button>
+    <button id="previous">Previous</button>
+</body>
+<script>
+    var next = document.querySelector("#next");
+    var previous = document.querySelector("#previous");
+
+    var page = document.location.search.split("=")[1] || 1;
+    var start = (page - 1) * 10;
+    var end = page * 10;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://jsonplaceholder.typicode.com/comments", false);
+    xhr.send();
+    var comments = JSON.parse(xhr.responseText);
+
+
+    for(var i = start; i < end; i++){
+        var n = document.createElement("li");
+        n.innerHTML = comments[i].name;
+        n.className = "name";
+        var e = document.createElement("li");
+        e.innerHTML = comments[i].email;
+        e.className = "email";
+        var ul = document.createElement("ul");
+        var div = document.createElement("div");
+        var body = document.querySelector("body");
+        ul.appendChild(n);
+        ul.appendChild(e);
+        div.appendChild(ul);
+        body.appendChild(div);
+    }
+
+    var next = document.querySelector("#next");
+    var previous = document.querySelector("#previous");
+
+    next.addEventListener("click", function(){
+        page++;
+        location.href = "comments.html?page=" + page;
+    });
+
+    previous.addEventListener("click", function(){
+        if(page == 1){
+            return;
+        }
+        page--;
+        location.href = "comments.html?page=" + page;
+    });
+
+</script>
+</html>

@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        h1{
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Users</h1>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>City</th>
+        </tr>
+        </thead>
+    </table>
+</body>
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://jsonplaceholder.typicode.com/users", false);
+    xhr.send();
+    var users = JSON.parse(xhr.responseText);
+
+    var table = document.querySelector("table");
+
+    users.forEach(user => {
+
+        var row = document.createElement("tr");
+        var id = document.createElement("td");
+        var name = document.createElement("td");
+        var username = document.createElement("td");
+        var email = document.createElement("td");
+        var city = document.createElement("td");
+
+        id.innerHTML = user.id;
+        name.innerHTML = user.name;
+        username.innerHTML = user.username;
+        email.innerHTML = user.email;
+        city.innerHTML = user.address.city;
+
+        row.appendChild(id);
+        row.appendChild(name);
+        row.appendChild(username);
+        row.appendChild(email);
+        row.appendChild(city);
+
+        table.appendChild(row);
+    });
+
+</script>
+</html>

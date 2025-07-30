@@ -1,0 +1,121 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        body{
+            background-color: #5ba4b8;
+        }
+        h1{
+            text-align: center;
+            color: white;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin-top: 50px;
+        }
+        .card{
+            margin: auto;
+            margin-top: 50px;
+        }
+        .center{
+            margin: auto;
+            width: 18%;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>To-Do List +</h1>
+
+<div class="center row g-3">
+  <div class="col-auto">
+    <input type="text" class="form-control" placeholder="Enter your task" id="textbox">
+  </div>
+  <div class="col-auto">
+    <a id="add" class="btn btn-primary">+</a>
+  </div>
+</div>
+
+  <div class="col" id="col">
+  </div>
+<script>
+
+
+    var list = localStorage.getItem("list");
+    list = JSON.parse(list);
+    
+    if(list == null){
+        list = [];
+        localStorage.setItem("list",JSON.stringify(list));
+    }
+    
+    //display list
+    list.forEach(function(item){
+      var card = document.createElement("div");
+      card.classList.add("card","w-75","shadow-sm");
+
+      var cardBody = document.createElement("div");
+      cardBody.classList.add("card-body","d-flex","align-items-center");
+
+      var formCheck = document.createElement("div");
+      formCheck.classList.add("form-check");
+
+      var cardTitle = document.createElement("h5");
+      cardTitle.classList.add("card-title","flex-grow-1","ms-3");
+      cardTitle.textContent = item.name;
+
+      var formCheckInput = document.createElement("input");
+      formCheckInput.classList.add("form-check-input");
+      formCheckInput.type = "checkbox";
+      formCheckInput.value = "done";
+      formCheckInput.title = "done";
+      formCheckInput.checked = item.checked;
+      if(item.checked == true){
+        cardTitle.style.textDecoration = "line-through";
+        cardTitle.style.color = "gray";
+      }
+
+      var cardDelete = document.createElement("a");
+      cardDelete.classList.add("btn","btn-danger","ms-auto");
+      cardDelete.textContent = "Delete";
+
+      formCheck.appendChild(formCheckInput);
+      cardBody.appendChild(formCheck);
+      cardBody.appendChild(cardTitle);
+      cardBody.appendChild(cardDelete);
+      card.appendChild(cardBody);
+      document.getElementById("col").appendChild(card);
+
+      cardDelete.addEventListener("click",function(){
+        list.splice(list.indexOf(item),1);
+        localStorage.setItem("list",JSON.stringify(list));
+        window.location.reload();
+      })//cardDelete
+
+      formCheckInput.addEventListener("change",function(){
+        if(item.checked == false){
+            cardTitle.style.textDecoration = "line-through";
+            cardTitle.style.color = "gray";
+            item.checked = true;
+            localStorage.setItem("list",JSON.stringify(list));
+        }else{
+            cardTitle.style.textDecoration = "none";
+            cardTitle.style.color = "black";
+            item.checked = false;
+            localStorage.setItem("list",JSON.stringify(list));
+        }
+      })
+    })
+
+    var textbox = document.getElementById("textbox");
+    var add = document.getElementById("add");
+    add.addEventListener("click",function(){
+        list.push({name:textbox.value,checked:false});
+        localStorage.setItem("list",JSON.stringify(list));
+        window.location.reload();
+        
+    })
+</script>
+</html>
