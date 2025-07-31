@@ -1,0 +1,124 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr =[20,7,8,10,89,100,45,17];
+
+        //With Array.filter() function, to return the odd numbers from an array
+        console.log(arr.filter((num)=>num%2==1));
+
+        //With array.forech() to print the even values.
+        arr.forEach((num)=>{
+            if (num%2==0) {
+                console.log(num);
+            }
+        });
+
+        //With array.sort() to print sorted arr asc and des. 
+        console.log(arr.sort((a,b)=>a-b));
+        console.log(arr.sort((a,b)=>b-a));
+
+        //Try for...in, for...of and .foreach() with an array.
+        
+        //for in will use the indexes in the array
+        for (num in arr) {
+            console.log(num);
+        }
+
+        //for of will use the values in the array
+        for (num of arr) {
+            console.log(num);
+            
+        }
+
+        //for each will use the values in the array
+        arr.forEach((num)=>{
+            console.log(num);
+        });
+
+        //operations using eval()
+        function operationEval(op){
+            let nums = Array.from(arguments);
+            console.log(eval(nums.slice(1,arr.length).join(op)));
+        }
+
+        function operationRest(op,...nums){
+            console.log(eval(nums.join(op)));
+        };
+
+        //Create an arrow function that returns an object representing a rectangle 
+        //with properties for its width and height, and a method to calculate its area.
+        let rectangle = (w,h)=>{
+            return {
+                width:w,
+                height:h,
+                area: ()=> w*h
+            }
+        };
+
+
+        //Create  a  predefined  list  of  objects  representing  students,  each  with  a 
+        //name and grade. Then, use an arrow function to find and log the names 
+        //of students who passed (grade >= 50).
+        const students = [   
+            { name: 'John', grade: 45 },   
+            { name: 'Jane', grade: 85 },   
+            { name: 'Dave', grade: 52 },   
+            { name: 'Sara', grade: 60 } ];
+
+            students.forEach((student)=>{
+                if(student.grade>=50){
+                    console.log(`${student.name} passed with ${student.grade}%`);
+                    
+                }
+            })
+
+        // Use object destructuring to extract properties from an object into 
+        // individual variables. 
+        let obj = {
+            name: "seif",
+            age: 21
+        };
+
+        let {name,age} = obj;
+        console.log(name,age);
+
+        //Create a simple factory function that generates objects representing cars.
+        function createCar({make,model,year}){
+            return {
+                make,
+                model,
+                year,
+                display: ()=> console.log(`${make} ${model} ${year}`)
+            }
+        }
+
+        createCar({make:"Toyota",model:"Camry",year:2022}).display();
+        createCar({make:"Honda",model:"Civic",year:2023}).display();
+
+
+        //Create a factory function to represent different geometric shapes.
+        function createShape({type,...dimensions}){
+            return{
+                type,
+                area: function(){
+                    if(type ==="circle"){
+                        return Math.PI*dimensions.radius*dimensions.radius;
+                    }else if(type ==="rectangle"){
+                        return dimensions.width*dimensions.height;
+                    }else if(type ==="square"){
+                        return dimensions.width*dimensions.width;
+                    }
+                }
+            }
+        }
+        console.log(createShape({type:"circle",radius:5}).area());
+        console.log(createShape({type:"rectangle",width:10,height:5}).area());
+        console.log(createShape({type:"square",width:5}).area());
+    </script>
+</body>
+</html>
