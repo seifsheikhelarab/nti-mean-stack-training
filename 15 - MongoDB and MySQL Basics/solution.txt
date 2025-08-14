@@ -2,7 +2,7 @@
 
 { Level: "Entry Level" } - 1139
 
-{"YearsExp": {"$regex": "^[3-9]|^[1-9]\\d|\\d{3,}"}} - 2247
+{"YearsExp": {"$regex": "\\b(3|[4-9]|[1-9]\\d+)\\b"}} - 3438
 
 {"Location": {"$nin": ["cairo", "Giza"]}} - 4380
 
