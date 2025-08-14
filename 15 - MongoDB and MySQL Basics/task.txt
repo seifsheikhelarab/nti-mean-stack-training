@@ -1,0 +1,12 @@
+Homework :
+    - in Wuzzuf_Jobs dataset, use mongo compass to get that :
+        - jobs that requires "photoshop"
+        - jobs that requires "entery level"
+        - jobs that requires 3 years exp or more
+        - jobs outside "cairo" and "Giza"
+
+        - order first 33 company that had required more jobs
+
+        - what are the most required job title
+        - what are the most required job level
+        - where is job location most repeated

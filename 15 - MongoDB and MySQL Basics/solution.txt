@@ -1,0 +1,81 @@
+{Skills:{$regex:"photoshop","$options":"i"}} - 165
+
+{ Level: "Entry Level" } - 1139
+
+{"YearsExp": {"$regex": "^[3-9]|^[1-9]\\d|\\d{3,}"}} - 2247
+
+{"Location": {"$nin": ["cairo", "Giza"]}} - 4380
+
+
+//order first 33 company that had required more jobs
+[
+    {
+        '$group': {
+            '_id': '$Company', 
+            'count': {
+                '$sum': 1
+            }
+        }
+    }, {
+        '$sort': {
+            'count': -1
+        }
+    }, {
+        '$limit': 33
+    }
+]
+
+
+//The most required job title is an accountant
+[
+    {
+        '$group': {
+            '_id': '$Title', 
+            'count': {
+                '$sum': 1
+            }
+        }
+    }, {
+        '$sort': {
+            'count': -1
+        }
+    }, {
+        '$limit': 1
+    }
+]
+
+//most required job level is Experienced
+[
+    {
+        '$group': {
+            '_id': '$Level', 
+            'count': {
+                '$sum': 1
+            }
+        }
+    }, {
+        '$sort': {
+            'count': -1
+        }
+    }, {
+        '$limit': 1
+    }
+]
+
+//most repeated job place is Cairo
+[
+    {
+        '$group': {
+            '_id': '$Location', 
+            'count': {
+                '$sum': 1
+            }
+        }
+    }, {
+        '$sort': {
+            'count': -1
+        }
+    }, {
+        '$limit': 1
+    }
+]
