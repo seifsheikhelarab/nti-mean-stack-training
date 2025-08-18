@@ -1,0 +1,16 @@
+{
+  "name": "16---mysql-queries",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "mysql2": "^3.14.3"
+  }
+}
